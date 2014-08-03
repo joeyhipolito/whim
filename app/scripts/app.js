@@ -30,7 +30,11 @@ angular
       });
 
     $stateProvider
-      .state('template', {
+      .state('member', {
+        abstract: true,
+        templateUrl: 'views/templates/sidebar-both.html'
+      })
+      .state('member.template', {
         url: '/template',
         templateUrl: 'views/template.html'
       });

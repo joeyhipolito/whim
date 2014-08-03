@@ -106,9 +106,7 @@ a, a:link, a:active, a:visited {
 }
 
 .b-sidenav {
-  background: #111;
-  width: 75%;
-  z-index: 1000;
+  background: #151312;
   height: 100%;
 }
 
@@ -117,8 +115,7 @@ a, a:link, a:active, a:visited {
 }
 
 .b-content {
-  background: #222;
-  margin-left: -10px;
+  background: #282524;
   width: 100%;
   height: 100%;
 }
@@ -198,15 +195,15 @@ a, a:link, a:active, a:visited {
 .b-list-group__title {
   text-transform: uppercase;
   height: 48px;
-  background: #222;
+  background: #1e1b19;
   line-height: 48px;
-  color: #888;
-  border-bottom: 1px solid #333;
+  color: #918c7f;
+  border-bottom: 1px solid #2c2927;
   padding-left: 20px;
 }
 
 .b-list__item {
-  border-top: 1px solid #333;
+  border-top: 1px solid #2c2927;
 }
 
 .b-list__item:first-child {
@@ -215,7 +212,7 @@ a, a:link, a:active, a:visited {
 }
 
 .b-list__item:last-child {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #2c2927;
 }
 
 
