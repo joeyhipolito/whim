@@ -1,20 +1,17 @@
 <ion-pane>
-      <ion-header-bar>
-
+    <ion-header-bar>
         <input menu-toggle="left" type='checkbox' id="whim-b-toggle__checkbox" class="whim-b-toggle__checkbox" ng-checked="leftSideMenu.isOpen()">
-        <label for="whim-b-toggle__checkbox" class="button whim-b-toggle__label whim-b-toggle__button">
-          <span class="whim-b-toggle__icon"></span>
-        </label>
+            <label for="whim-b-toggle__checkbox" class="button whim-b-toggle__label whim-b-toggle__button">
+                <span class="whim-b-toggle__icon"></span>
+            </label>
         <button class="button ion-social-github"></button>
-
-
-      </ion-header-bar>
-      <ion-content class="has-header">
+    </ion-header-bar>
+    <ion-content class="has-header">
         <ion-list>
-          <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-            {{playlist.title}}
-          </ion-item>
+            <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+                {{playlist.title}}
+            </ion-item>
         </ion-list>
-      </ion-content>
-    
-    </ion-pane>
+    </ion-content>
+
+</ion-pane>
