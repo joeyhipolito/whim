@@ -1,6 +1,20 @@
+<ion-view title="Account Explorer">
+  <ion-nav-buttons side="left">
+    <input menu-toggle="left" type='checkbox' id="whim-b-toggle__checkbox" class="whim-b-toggle__checkbox" ng-checked="leftSideMenu.isOpen()">
+    <label for="whim-b-toggle__checkbox" class="button whim-b-toggle__label whim-b-toggle__button">
+      <span class="whim-b-toggle__icon"></span>
+    </label>
 
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button ion-social-github"></button>
 
-<div class="b-content">
-  
-</div>
-<div class="b-sidenav--right"></div>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

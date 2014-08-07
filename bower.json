@@ -13,7 +13,7 @@
     "angular-route": "1.2.16",
     "angular-ui-router": "~0.2.10",
     "angular-ui-codemirror": "~0.1.6",
-    "ionic": "~0.9.27"
+    "ionic": "driftyco/ionic-bower#master"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

@@ -1,0 +1,18 @@
+<ion-side-menus>
+  
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+  
+  <ion-side-menu side="left" ng-click="sideMenuClick()">
+    <ul class="ulMenu">
+      <li class="active visible"><a ng-click="go('eventmenu.home')"><i class="fa fa-home"></i><span>Home</span></a></li>
+      <li class="active visible"><a ng-click="go('eventmenu.checkin')"><i class="fa fa-home"></i><span>Check-in</span></a></li>
+      <li class="visible"><a ng-click="go('eventmenu.attendees')"><i class="fa fa-info"></i><span>Attendees</span></a></li>
+    </ul>
+  </ion-side-menu>
+  
+</ion-side-menus>

@@ -29,21 +29,28 @@ angular
         templateUrl: 'views/home.html'
       });
 
-    $stateProvider
-      .state('member', {
-        abstract: true,
-        templateUrl: 'views/templates/sidebar-both.html'
-      })
-      .state('member.template', {
-        url: '/template',
-        templateUrl: 'views/template.html'
-      });
+
+    var explorer = {
+      name : 'explorer',
+      templateUrl : 'views/templates/left-sidebar.html'
+    };
+
+    var explorerAccount = {
+      name: 'explorer.account',
+      url: '/account',
+      parent: explorer,
+      templateUrl: 'views/template.html',
+      controller: function($scope, $ionicSideMenuDelegate) {
+        $scope.leftSideMenu = {
+          isOpen: function() {
+            return $ionicSideMenuDelegate.isOpenLeft();
+          }
+        };
+      }
+    };
 
     $stateProvider
-      .state('editor', {
-        url: '/editor',
-        templateUrl: 'views/editor.html',
-        controller: 'EditorCtrl'
-      });
+      .state(explorer)
+      .state(explorerAccount);
 
   });

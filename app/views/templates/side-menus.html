@@ -2,14 +2,24 @@
 
   <!-- CENTER CONTENT -->
   <ion-pane ion-side-menu-content>
+    <ion-nav-view name="content" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
 
   <!-- LEFT SIDE MENU -->
   <ion-side-menu side="left">
-  </ion-side-menu>
-
-  <!-- RIGHT SIDE MENU -->
-  <ion-side-menu side="right">
+    <ion-content>
+      <ion-list>
+        <ion-item nav-clear menu-close href="#/app/search">
+          Search
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/playlists">
+          Playlists
+        </ion-item>
+      </ion-list>
+    </ion-content>
   </ion-side-menu>
 
 </ion-side-menus>
