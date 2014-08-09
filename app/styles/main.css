@@ -96,53 +96,19 @@ a, a:link, a:active, a:visited {
   z-index: 10;
 }
 
-.wrapper {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-}
-
 .b-sidenav {
   background: #151312;
   height: 100%;
 }
 
 .b-nav-list__item {
-  height: 54px;
+  height: 48px;
 }
 
 .b-content {
   background: #282524;
   width: 100%;
   height: 100%;
-}
-
-/* Push classes applied to the body */
-
-.cbp-spmenu-push {
-  overflow-x: hidden;
-  position: relative;
-  left: 0;
-}
-
-.cbp-spmenu-push-toright {
-  left: 240px;
-}
-
-.cbp-spmenu-push-toleft {
-  left: -240px;
-}
-
-/* Transitions */
-
-.cbp-spmenu,
-.cbp-spmenu-push {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .b-logo {
@@ -194,9 +160,9 @@ a, a:link, a:active, a:visited {
 
 .b-list-group__title {
   text-transform: uppercase;
-  height: 48px;
+  height: 42px;
   background: #1e1b19;
-  line-height: 48px;
+  line-height: 42px;
   color: #918c7f;
   border-bottom: 1px solid #2c2927;
   padding-left: 20px;
@@ -215,7 +181,25 @@ a, a:link, a:active, a:visited {
   border-bottom: 1px solid #2c2927;
 }
 
+/* app header */
+.b-header-bar {
+  background: #3c3835;
+  height: 48px;
+  padding: 0;
+}
 
+.b-header-bar__button {
+  color: #f0ead0;
+  height: 48px;
+  width: 48px;
+  border-right: 1px solid #0f0f0f;
+  text-align: center;
+  line-height: 48px;
+}
+
+.b-icon-button__icon {
+  font-size: 2em;
+}
 
 /* utils */
 
@@ -261,9 +245,9 @@ a, a:link, a:active, a:visited {
 
 .b-media__icon--medium {
   font-size: 2em;
-  width: 54px;
-  height: 54px;
-  line-height: 54px;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
 }
 
 .b-media__icon_img {}
