@@ -382,3 +382,22 @@ a, a:link, a:active, a:visited {
 .whim-b-toggle__checkbox:checked + .whim-b-toggle__label .whim-b-toggle__icon:after {
   transform: rotate3d(0,0,1,-45deg);
 }
+
+
+/* fix android menu-content border and drag fail */
+.menu-content {
+  
+}
+
+.menu-open .menu-content .pane, .menu-open .menu-content .scroll-content {
+  pointer-events: auto !important;
+}
+
+.grade-b .menu-content, .grade-c .menu-content {
+  box-sizing: border-box !important;
+  right: 0px !important;
+  left: 0px !important;
+  border-right: none !important;
+  border-left: none !important;
+  box-shadow: none;
+}
