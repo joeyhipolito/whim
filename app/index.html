@@ -27,7 +27,11 @@
 
     <!-- Add your site or application content here -->
     <!-- <div class="b-container hflex" ui-view></div> -->
-    <ion-nav-view class="b-container"></ion-nav-view>
+    <ion-nav-bar class="nav-title-slide-ios7 bar-positive">
+      <ion-nav-back-button class="button-icon ion-arrow-left-c">
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view class="b-container" animation="slide-left-right"></ion-nav-view>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>

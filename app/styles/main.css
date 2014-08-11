@@ -123,8 +123,8 @@ a, a:link, a:active, a:visited {
   top: 48px;
 }
 
-.menu-open .b-pain {
-  pointer-events: auto;
+.menu-open .b-pane {
+  pointer-events: auto !important;
 }
 
 .b-logo {

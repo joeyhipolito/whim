@@ -49,8 +49,15 @@ angular
       }
     };
 
+    var editor = {
+      name: 'editor',
+      url: '/editor',
+      templateUrl: 'views/templates/right-sidebar.html'
+    };
+
     $stateProvider
       .state(explorer)
-      .state(explorerAccount);
+      .state(explorerAccount)
+      .state(editor);
 
   });
