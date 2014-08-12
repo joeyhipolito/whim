@@ -8,7 +8,7 @@
  * Factory in the whimApp.
  */
 angular.module('whimApp')
-  .factory('auth', function (firebaseRef, $firebaseSimpleLogin) {
+  .factory('auth', function (firebaseRef, $firebase ,$firebaseSimpleLogin) {
     var ref = firebaseRef();
     var auth = $firebaseSimpleLogin(ref);
 
@@ -19,10 +19,26 @@ angular.module('whimApp')
           scope: 'user,public_repo,read:org,gist'
         })
         .then(function(user) {
-          console.log(user);
+          if (user) {
+            console.log(user);
+            var userRef = firebaseRef('/users/' + user.id);
+            var sync = $firebase(userRef);
+            var record = sync.$asObject();
+
+            record.$loaded().then(function(){
+              if (record.id === undefined) {
+                sync.$set({
+                  id: user.id,
+                  username: user.username,
+                  displayName: user.displayName,
+                  createdAt: Firebase.ServerValue.TIMESTAMP
+                });
+              }
+            });
+          }
         });
       }
-    }
+    };
 
 
   });
