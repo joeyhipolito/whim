@@ -17,18 +17,19 @@ angular
     'ngTouch',
     'ui.router',
     'ui.codemirror',
+    'firebase',
     'ionic'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     
     $urlRouterProvider.otherwise('/');
 
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'views/home.html'
-      });
-
+    var home = {
+      name: 'home',
+      url: '/',
+      templateUrl: 'views/home.html',
+      controller: 'LoginCtrl'
+    };
 
     var explorer = {
       name : 'explorer',
@@ -50,6 +51,7 @@ angular
     };
 
     $stateProvider
+      .state(home)
       .state(explorer)
       .state(explorerAccount);
 
