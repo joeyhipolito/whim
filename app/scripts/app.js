@@ -41,12 +41,26 @@ angular
       url: '/account',
       parent: explorer,
       templateUrl: 'views/template.html',
-      controller: function($scope, $ionicSideMenuDelegate) {
+      controller: function($state, $scope, $ionicSideMenuDelegate, auth,  $rootScope) {
         $scope.leftSideMenu = {
           isOpen: function() {
             return $ionicSideMenuDelegate.isOpenLeft();
           }
         };
+
+        $scope.logout = function() {
+          auth.logout();
+        };
+
+        // events
+        $rootScope.$on("$firebaseSimpleLogin:login", function(e, user) {
+          $state.go('explorer.account');
+        });
+
+        $rootScope.$on("$firebaseSimpleLogin:logout", function(e, user) {
+          $state.go('home');
+        });
+
       }
     };
 

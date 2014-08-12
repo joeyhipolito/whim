@@ -37,6 +37,9 @@ angular.module('whimApp')
             });
           }
         });
+      },
+      logout: function() {
+        auth.$logout();
       }
     };
 
