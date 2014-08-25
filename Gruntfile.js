@@ -6,7 +6,6 @@
 // 'test/spec/{,*/}*.js'
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
-
 module.exports = function (grunt) {
 
   // Load grunt tasks automatically
@@ -65,24 +64,35 @@ module.exports = function (grunt) {
 
     // The actual grunt server settings
     connect: {
+      proxies: [
+        {
+          context: '/api',
+          host: 'localhost',
+          port: 3000,
+          rewrite: {
+              '^/api': ''
+          }
+        }
+      ],
       options: {
         port: 8888,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: '0.0.0.0',
+        // hostname: '0.0.0.0',
+        hostname: 'localhost',
         livereload: 35729
       },
       livereload: {
         options: {
           open: true,
           middleware: function (connect) {
-            return [
-              connect.static('.tmp'),
-              connect().use(
+            var middlewares = [require('grunt-connect-proxy/lib/utils').proxyRequest];
+            middlewares.push(connect.static('.tmp'));
+            middlewares.push(connect().use(
                 '/bower_components',
                 connect.static('./bower_components')
-              ),
-              connect.static(appConfig.app)
-            ];
+            ));
+            middlewares.push(connect.static(appConfig.app));
+            return middlewares;
           }
         }
       },
@@ -362,6 +372,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
+      'configureProxies',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
